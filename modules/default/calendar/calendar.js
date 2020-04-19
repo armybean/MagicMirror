@@ -268,6 +268,12 @@ Module.register("calendar", {
 					timeWrapper.align = "left";
 					timeWrapper.style.paddingLeft = "2px";
 					timeWrapper.innerHTML = moment(event.startDate, "x").format("LT");
+
+					if(this.config.showEnd){
+						timeWrapper.innerHTML += " - ";
+						timeWrapper.innerHTML += moment(event.endDate, "x").format("LT");
+					}
+
 					eventWrapper.appendChild(timeWrapper);
 					titleWrapper.align = "right";
 				}
